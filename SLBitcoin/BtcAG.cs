@@ -33,7 +33,7 @@ namespace SLBitcoin
 
             Org.BouncyCastle.Math.BigInteger Db = new Org.BouncyCastle.Math.BigInteger(1, kps.bytePrivateKey);
 
-            ECPoint dd = ps.G.Multiply(Db);
+            Org.BouncyCastle.Math.EC.ECPoint dd = ps.G.Multiply(Db);
 
             byte[] Y = dd.Y.ToBigInteger().ToByteArray();
             Array.Copy(Y, 0, kps.bytePublicAddress, 64 - Y.Length + 1, Y.Length);

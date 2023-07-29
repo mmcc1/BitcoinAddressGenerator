@@ -133,10 +133,10 @@ namespace SLBitcoin
         private void ComputePublicKey()
         {
             var ps = Org.BouncyCastle.Asn1.Sec.SecNamedCurves.GetByName("secp256k1");
-            ECPoint point = ps.G;
+            Org.BouncyCastle.Math.EC.ECPoint point = ps.G;
 
             Org.BouncyCastle.Math.BigInteger Db = new Org.BouncyCastle.Math.BigInteger(1, privKey);
-            ECPoint dd = point.Multiply(Db);
+            Org.BouncyCastle.Math.EC.ECPoint dd = point.Multiply(Db);
 
             pubaddr = new byte[65];
             byte[] Y = dd.Y.ToBigInteger().ToByteArray();

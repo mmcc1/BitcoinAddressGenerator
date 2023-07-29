@@ -60,7 +60,7 @@ namespace SLBitcoin
             return b1.Length == b2.Length && memcmp(b1, b2, b1.Length) == 0;
         }
 
-        
+        /*
         public static bool ValidatePrivateKey(string privateKey, string pubAddress)
         {
             try
@@ -81,6 +81,7 @@ namespace SLBitcoin
                 return false;
             }
         }
+        */
 
 
         public static bool B58Decode(string source, ref byte[] destination)
